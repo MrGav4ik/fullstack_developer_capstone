@@ -13,6 +13,57 @@ img{
   margin-bottom: 1%;
 }
 
+.card-contactus{
+  border: rgb(103, 102, 105) 3px solid;
+  border-radius: 5%;
+  display: inline-block;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  width: 90%;
+
+}
+
+.contactus-hr {
+  margin: 3%;
+}
+
+.contactus-img-top img {
+  margin-left: 20%;
+  margin-top: 3%;
+}
+
+.contactus-bottom {
+  display: flex;
+}
+
+.contactus-left {
+  width: 45%;
+  align-items: center;
+  border-right: 4px solid;
+  align-items: center;
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+.contactus-left img {
+  margin-left: 27.5%;
+  width: 240px;
+}
+
+.contactus-right {
+  width: 44%;
+  margin-right: 5%;
+  text-align: center;
+  color: cornflowerblue;
+  font-weight: 500;
+}
+
+.contactus-right h6 {
+  font-weight: bolder;
+}
+
 .row{
   display: flex;  
   flex: 1;
