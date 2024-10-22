@@ -11,7 +11,7 @@ const PostReview = () => {
   const [model, setModel] = useState();
   const [year, setYear] = useState("");
   const [date, setDate] = useState("");
-  const [carmodels, setCarmodels] = useState([]);
+  const [carmodels, setCarmodels] = useState([])
 
   let curr_url = window.location.href;
   let root_url = curr_url.substring(0,curr_url.indexOf("postreview"));
