@@ -42,6 +42,7 @@ const Dealers = () => {
       setDealersList(all_dealers)
     }
   }
+
   useEffect(() => {
     get_dealers();
   },[]);  
@@ -51,7 +52,6 @@ let isLoggedIn = sessionStorage.getItem("username") != null ? true : false;
 return(
   <div>
       <Header/>
-
      <table className='table'>
       <tr>
       <th>ID</th>
@@ -66,7 +66,7 @@ return(
       {states.map(state => (
           <option value={state}>{state}</option>
       ))}
-      </select>        
+      </select>      
 
       </th>
       {isLoggedIn ? (
