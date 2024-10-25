@@ -1,6 +1,6 @@
 from .models import CarMake, CarModel
 
-
+g
 def initiate():
     car_make_data = [
         {

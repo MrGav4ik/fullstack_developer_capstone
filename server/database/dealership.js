@@ -1,43 +1,50 @@
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
-const dealerships = new Schema({
-	id: {
+var dealershipSchema = new Schema({
+  id: {
     type: Number,
     required: true,
-	},
-	city: {
+  },
+  city: {
     type: String,
-    required: true
+    required: true,
   },
   state: {
     type: String,
-    required: true
+    required: true,
   },
   address: {
     type: String,
-    required: true
+    required: true,
   },
   zip: {
     type: String,
-    required: true
+    required: true,
+    validate: {
+      validator: function(v) {
+        return /\d{5}(-\d{4})?/.test(v); // US ZIP code validation
+      },
+      message: props => `${props.value} is not a valid ZIP code!`
+    }
   },
   lat: {
-    type: String,
-    required: true
+    type: Number,
+    required: true,
   },
   long: {
-    type: String,
-    required: true
+    type: Number,
+    required: true,
   },
-  short_name: {
+  shortName: {
     type: String,
   },
-  full_name: {
+  fullName: {
     type: String,
-    required: true
+    required: true,
   }
 });
 
-module.exports = mongoose.model('dealerships', dealerships);
+
+module.exports = mongoose.model('Dealership', dealershipSchema);
