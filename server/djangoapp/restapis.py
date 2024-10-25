@@ -9,7 +9,8 @@ backend_url = os.getenv(
     'backend_url', default="http://localhost:3030")
 sentiment_analyzer_url = os.getenv(
     'sentiment_analyzer_url',
-    default="https://sentianalyzer.1ngo4uiwbgna.us-south.codeengine.appdomain.cloud/")
+    default=
+    "https://sentianalyzer.1ngo4uiwbgna.us-south.codeengine.appdomain.cloud/")
 
 
 def get_request(endpoint, **kwargs):
@@ -29,6 +30,7 @@ def get_request(endpoint, **kwargs):
     except:
         print("Network exception occurred")
 
+
 def analyze_review_sentiments(text):
     request_url = sentiment_analyzer_url+"analyze/"+text
     try:
@@ -39,6 +41,7 @@ def analyze_review_sentiments(text):
         print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
 
+
 def post_review(data_dict):
     request_url = backend_url+"/insert_review"
     try:
@@ -47,6 +50,8 @@ def post_review(data_dict):
         return response.json()
     except:
         print("Network exception occurred")
+
+        
 # Add code for posting review
 def post_review(data_dict):
     request_url = backend_url+"/insert_review"
