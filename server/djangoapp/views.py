@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 
+
 def get_cars(request):
     count = CarMake.objects.filter().count()
     print(count)
@@ -27,6 +28,7 @@ def get_cars(request):
         })
     return JsonResponse({"CarModels": cars})
 
+
 @csrf_exempt
 def login_user(request):
     data = json.loads(request.body)
@@ -39,9 +41,11 @@ def login_user(request):
         response_data["status"] = "Authenticated"
     return JsonResponse(response_data)
 
+
 def logout_request(request):
     logout(request)
     return JsonResponse({"username": ""})
+
 
 @csrf_exempt
 def registration(request):
@@ -72,10 +76,12 @@ def registration(request):
 
     return JsonResponse({"userName": username, "error": "Already Registered"})
 
+
 def get_dealerships(request, state="All"):
     endpoint = "/fetchDealers" if state == "All" else f"/fetchDealers/{state}"
     dealerships = get_request(endpoint)
     return JsonResponse({"status": 200, "dealers": dealerships})
+
 
 def get_dealer_reviews(request, dealer_id):
     if dealer_id:
@@ -87,6 +93,7 @@ def get_dealer_reviews(request, dealer_id):
         return JsonResponse({"status": 200, "reviews": reviews})
     return JsonResponse({"status": 400, "message": "Bad Request"})
 
+
 def get_dealer_details(request, dealer_id):
     if dealer_id:
         endpoint = f"/fetchDealer/{dealer_id}"
@@ -94,13 +101,14 @@ def get_dealer_details(request, dealer_id):
         return JsonResponse({"status": 200, "dealer": dealership})
     return JsonResponse({"status": 400, "message": "Bad Request"})
 
+
 def add_review(request):
     if request.user.is_anonymous:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
     
-    data = json.loads(request.body)
     try:
         # Process the review data
         return JsonResponse({"status": 200})
-    except Exception as e:
-        return JsonResponse({"status": 401, "message": "Error in posting review"})
+    except Exception:
+        return JsonResponse({"status": 401,
+                            "message": "Error in posting review"})
