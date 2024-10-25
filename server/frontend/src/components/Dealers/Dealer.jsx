@@ -68,18 +68,18 @@ const Dealer = () => {
 
 
 return(
-  <div style={{margin:"20px"}}>
+  <div>
       <Header/>
-      <div style={{marginTop:"10px"}}>
+      <div style={{margin:"20px"}}>
       <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
       <h4  style={{color:"grey"}}>{dealer['city']},{dealer['address']}, Zip - {dealer['zip']}, {dealer['state']} </h4>
       </div>
-      <div class="reviews_panel">
+      <div class="reviews_panel" style={{margin:"20px"}}>
       {reviews.length === 0 && unreviewed === false ? (
         <text>Loading Reviews....</text>
       ):  unreviewed === true? <div>No reviews yet! </div> :
       reviews.map(review => (
-        <div className='review_panel'>
+        <div className='review_panel' style={{margin:"20px"}}>
           <img src={senti_icon(review.sentiment)} className="emotion_icon" alt='Sentiment'/>
           <div className='review'>{review.review}</div>
           <div className="reviewer">{review.name} {review.car_make} {review.car_model} {review.car_year}</div>
