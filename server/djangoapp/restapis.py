@@ -11,6 +11,7 @@ sentiment_analyzer_url = os.getenv(
     'sentiment_analyzer_url',
     default="https://sentianalyzer.1ngo4uiwbgna.us-south.codeengine.appdomain.cloud/")
 
+
 def get_request(endpoint, **kwargs):
     # Add code for get requests to back end
     params = ""

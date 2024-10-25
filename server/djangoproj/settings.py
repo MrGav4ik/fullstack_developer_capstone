@@ -30,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
 'https://vitaliykudri-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
-CSRF_TRUSTED_ORIGINS = ['https://vitaliykudri-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+CSRF_TRUSTED_ORIGINS = [
+'https://vitaliykudri-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -145,4 +146,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/build'),
     os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
-
