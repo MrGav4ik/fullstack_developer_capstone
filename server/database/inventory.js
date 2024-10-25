@@ -1,33 +1,32 @@
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
-const carSchema = new Schema({
-  dealer_id: {
-    type: Number,
-    required: true
-  },
-  make: {
-    type: String,
-    required: true
-  },
-  model: {
-    type: String,
-    required: true
-  },
-  body_type: {
-    type: String,
-    required: true
-  },
-  year: {
-    type: Number,
-    required: true
-  },
-  mileage: {
-    type: Number,
-    required: true
-  }
+var inventory = new Schema({
+    dealer_id: {
+        type: Number,
+        required: true
+    },
+    make: {
+        type: String,
+        required: true
+    },
+    model: {
+        type: String,
+        required: true
+    },
+    bodyType: {
+        type: String,
+        required: true
+    },
+    year: {
+        type: Number,
+        required: true
+    },
+    mileage: {
+        type: Number,
+        required: true
+    }
 });
 
-
-module.exports = mongoose.model('Car', carSchema);
+module.exports = mongoose.model('inventory', inventory);
