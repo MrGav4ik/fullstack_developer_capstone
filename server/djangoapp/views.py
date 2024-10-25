@@ -105,7 +105,7 @@ def get_dealer_details(request, dealer_id):
 def add_review(request):
     if request.user.is_anonymous:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
-    
+
     try:
         # Process the review data
         return JsonResponse({"status": 200})
