@@ -1,44 +1,44 @@
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
-const dealerships = new Schema({
-  id: {
-    type: Number,
-    required: true,
-  },
-  city: {
-    type: String,
-    required: true,
-  },
-  state: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-  zip: {
-    type: String,
-    required: true,
-  },
-  lat: {
-    type: String,
-    required: true,
-  },
-  long: {
-    type: String,
-    required: true,
-  },
-  short_name: {
-    type: String,
-  },
-  full_name: {
-    type: String,
-    required: true,
-  },
+var dealershipSchema = new Schema({
+    id: {
+        type: Number,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    zip: {
+        type: String,
+        required: true
+    },
+    country: {
+        type: String,
+        required: true
+    },
+    lat: {
+        type: Number,
+        required: true
+    },
+    lng: {
+        type: Number,
+        required: true
+    },
 });
 
-// Export the model
-module.exports = mongoose.model('dealerships', dealerships);
+module.exports = mongoose.model('dealerships', dealershipSchema);
