@@ -1,15 +1,15 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var reviewSchema = new Schema({
-  id: {
+const reviews = new Schema({
+	id: {
     type: Number,
     required: true,
-  },
-  name: {
+	},
+	name: {
     type: String,
-    required: true,
+    required: true
   },
   dealership: {
     type: Number,
@@ -17,29 +17,28 @@ var reviewSchema = new Schema({
   },
   review: {
     type: String,
-    required: true,
+    required: true
   },
   purchase: {
     type: Boolean,
-    required: true,
+    required: true
   },
   purchase_date: {
     type: String,
-    required: true,
+    required: true
   },
   car_make: {
     type: String,
-    required: true,
+    required: true
   },
   car_model: {
     type: String,
-    required: true,
+    required: true
   },
   car_year: {
     type: Number,
-    required: true,
+    required: true
   },
 });
 
-
-module.exports = mongoose.model('Review', reviewSchema);
+module.exports = mongoose.model('reviews', reviews);
